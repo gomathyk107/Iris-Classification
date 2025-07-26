@@ -2,6 +2,7 @@ fastapi
 uvicorn
 mlflow
 scikit-learn
+pandas
 pydantic
 pytest
 httpx

@@ -10,10 +10,10 @@ model_name = "IrisBestModel"
 model_stage = "Staging"  # or "Production"
 
 model_uri = f"models:/{model_name}/{model_stage}"
-# mlflow.set_tracking_uri("file:../models/mlruns")
-mlflow.set_tracking_uri("file:/app/models/mlruns")
-# model = mlflow.pyfunc.load_model("models:/IrisBestModel/3")
-model = mlflow.pyfunc.load_model("file:/app/models/mlruns/709871268375005215/models/m-c24f54082aec4688b1a70e3982650b90/artifacts")
+mlflow.set_tracking_uri("file:../models/mlruns")
+# mlflow.set_tracking_uri("file:/app/models/mlruns")
+model = mlflow.pyfunc.load_model("models:/IrisBestModel/2")
+# model = mlflow.pyfunc.load_model("file:/app/models/mlruns/709871268375005215/models/m-c24f54082aec4688b1a70e3982650b90/artifacts")
 
 # Define input schema
 class IrisInput(BaseModel):
