@@ -1,7 +1,7 @@
 # tests/test_api.py
 
 from fastapi.testclient import TestClient
-from api.main import app  # adjust path if main.py is elsewhere
+from API.main import app  # adjust path if main.py is elsewhere
 
 client = TestClient(app)
 
