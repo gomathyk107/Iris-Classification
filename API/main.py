@@ -20,7 +20,7 @@ if env == "tests":
         # Relative test path
     mlruns_path = Path(__file__).resolve().parent.parent / "models" / "mlruns"
     mlflow.set_tracking_uri(f"file:{mlruns_path}")
-    model_path = "D:/MLOPS/Iris-Classification/models/mlruns/709871268375005215/models/m-c24f54082aec4688b1a70e3982650b90/artifacts"
+    model_path = os.path.join(mlruns_path ,"709871268375005215/models/m-c24f54082aec4688b1a70e3982650b90/artifacts")
     model = mlflow.pyfunc.load_model(model_path)
 else:
     # Docker/Prod path
