@@ -1,0 +1,10 @@
+artifact_location: file:d:/MLOPS/Iris-Classification/notebooks/../models/mlruns/484549340631699792/models/m-55bbc891dd6443339cbae4590b65fc7c/artifacts
+creation_timestamp: 1753519723404
+experiment_id: '484549340631699792'
+last_updated_timestamp: 1753519726202
+model_id: m-55bbc891dd6443339cbae4590b65fc7c
+model_type: null
+name: model
+source_run_id: 74f31e0ad25b4d3eafbb3d7fa1cc8d8e
+status: 2
+status_message: null

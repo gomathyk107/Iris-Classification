@@ -1,0 +1,14 @@
+artifact_uri: file:d:/MLOPS/Iris-Classification/notebooks/../models/mlruns/484549340631699792/74f31e0ad25b4d3eafbb3d7fa1cc8d8e/artifacts
+end_time: 1753519726220
+entry_point_name: ''
+experiment_id: '484549340631699792'
+lifecycle_stage: active
+run_id: 74f31e0ad25b4d3eafbb3d7fa1cc8d8e
+run_name: LogisticRegression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753519723336
+status: 3
+tags: []
+user_id: Gomathi

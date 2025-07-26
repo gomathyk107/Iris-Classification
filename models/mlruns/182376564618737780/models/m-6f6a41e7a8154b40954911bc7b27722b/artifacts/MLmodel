@@ -1,0 +1,22 @@
+artifact_path: file:d:/MLOPS/Iris-Classification/notebooks/../models/mlruns/182376564618737780/models/m-6f6a41e7a8154b40954911bc7b27722b/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.1
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+mlflow_version: 3.1.4
+model_id: m-6f6a41e7a8154b40954911bc7b27722b
+model_size_bytes: 53436
+model_uuid: m-6f6a41e7a8154b40954911bc7b27722b
+prompts: null
+run_id: fd3871fa642541b69aba75e61de9e709
+utc_time_created: '2025-07-26 09:05:19.647406'

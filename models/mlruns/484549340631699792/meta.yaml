@@ -1,0 +1,6 @@
+artifact_location: file:d:/MLOPS/Iris-Classification/notebooks/../models/mlruns/484549340631699792
+creation_time: 1753519665597
+experiment_id: '484549340631699792'
+last_update_time: 1753519665597
+lifecycle_stage: active
+name: Iris_Model_Tracking

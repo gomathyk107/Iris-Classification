@@ -1,0 +1,6 @@
+artifact_location: file:d:/MLOPS/Iris-Classification/notebooks/../models/mlruns/182376564618737780
+creation_time: 1753520715217
+experiment_id: '182376564618737780'
+last_update_time: 1753520715217
+lifecycle_stage: active
+name: RandomForest_Hyperparam_Tuning

@@ -1,0 +1,14 @@
+artifact_uri: file:d:/MLOPS/Iris-Classification/notebooks/../models/mlruns/709871268375005215/76ac7a51f6a34ac8b378c8cd6008c900/artifacts
+end_time: 1753521031160
+entry_point_name: ''
+experiment_id: '709871268375005215'
+lifecycle_stage: active
+run_id: 76ac7a51f6a34ac8b378c8cd6008c900
+run_name: RandomForest
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753521027457
+status: 3
+tags: []
+user_id: Gomathi

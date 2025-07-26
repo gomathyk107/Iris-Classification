@@ -1,0 +1,6 @@
+artifact_location: file:d:/MLOPS/Iris-Classification/notebooks/../models/mlruns/709871268375005215
+creation_time: 1753521024470
+experiment_id: '709871268375005215'
+last_update_time: 1753521024470
+lifecycle_stage: active
+name: Iris_Comparison

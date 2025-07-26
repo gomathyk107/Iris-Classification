@@ -1,0 +1,6 @@
+artifact_location: file:d:/MLOPS/Iris-Classification/notebooks/../models/mlruns/722708361533479413
+creation_time: 1753520387449
+experiment_id: '722708361533479413'
+last_update_time: 1753520387449
+lifecycle_stage: active
+name: LogReg_Hyperparam_Tuning
