@@ -7,3 +7,4 @@ pydantic
 pytest
 httpx
 sqlalchemy
+prometheus_fastapi_instrumentator

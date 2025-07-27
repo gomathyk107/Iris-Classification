@@ -1,14 +1,40 @@
 import sys
 import os 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from fastapi import FastAPI
+from fastapi import FastAPI,Request
 from pydantic import BaseModel,Field,validator
+from prometheus_fastapi_instrumentator import Instrumentator
 import mlflow.pyfunc
 import numpy as np
 from pathlib import Path
 from api.logger import log_to_db, log_to_file
 
 app = FastAPI()
+
+Instrumentator().instrument(app).expose(app)
+from prometheus_client import start_http_server, Summary
+from prometheus_client import Counter, generate_latest, CONTENT_TYPE_LATEST,Gauge
+from starlette.responses import Response
+
+REQUEST_COUNT = Counter('request_count', 'Total HTTP Requests')
+@app.middleware("http")
+async def count_requests(request, call_next):
+    REQUEST_COUNT.inc()
+    response = await call_next(request)
+    return response
+
+# @app.get("/metrics")
+# def metrics():
+    # return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
+
+# Counter: total predictions made
+TOTAL_PREDICTIONS = Counter("total_predictions", "Total number of predictions made")
+
+# Gauge: last predicted class (we'll use 0, 1, 2 for iris classes)
+LAST_PREDICTION = Gauge("last_prediction", "Last predicted class")
+
+# Optional: Custom gauge values for inputs, if needed
+LAST_SEPAL_LENGTH = Gauge("last_sepal_length", "Sepal length of last input")
 
 # Load model from MLflow Model Registry
 model_name = "IrisBestModel"
@@ -68,6 +94,10 @@ def predict(data: IrisInput):
     ]]
     prediction = model.predict(features)
 
+    TOTAL_PREDICTIONS.inc()
+    LAST_PREDICTION.set(int(prediction[0]))  # assuming prediction is 0,1,2
+    LAST_SEPAL_LENGTH.set(features["sepal_length"])
+
     # Log to file + DB
     log_to_file(features, prediction[0])
     log_to_db(features, prediction[0])
@@ -86,4 +116,8 @@ def get_metrics():
         "last_prediction": last_pred.prediction[0] if last_pred else None,
         "last_input": last_pred.input_data if last_pred else None
     }
+
+@app.get("/prometheus-metrics")
+def prometheus_metrics():
+    return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
 
