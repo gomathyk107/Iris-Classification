@@ -96,7 +96,7 @@ def predict(data: IrisInput):
 
     TOTAL_PREDICTIONS.inc()
     LAST_PREDICTION.set(int(prediction[0]))  # assuming prediction is 0,1,2
-    LAST_SEPAL_LENGTH.set(features["sepal_length"])
+    # LAST_SEPAL_LENGTH.set(features[[0]])
 
     # Log to file + DB
     log_to_file(features, prediction[0])
