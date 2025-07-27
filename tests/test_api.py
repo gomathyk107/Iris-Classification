@@ -4,7 +4,7 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 os.environ["ENVIRONMENT"] = "tests"  # Must come before importing main
 from fastapi.testclient import TestClient
-from API.main import app  # adjust path if main.py is elsewhere
+from api.main import app  # adjust path if main.py is elsewhere
 
 client = TestClient(app)
 
