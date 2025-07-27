@@ -5,7 +5,7 @@ FROM python:3.13-slim
 WORKDIR /app
 
 # Copy app files
-COPY ./API /app/api
+COPY ./api /app/api
 COPY ./models /app/models
 COPY requirements.txt .
 
