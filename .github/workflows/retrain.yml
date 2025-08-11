@@ -1,0 +1,30 @@
+# .github/workflows/retrain.yml
+name: Retrain Model on New Data
+
+on:
+  push:
+    paths:
+      - "retraining_data/**"
+      - "retraining/retrain.py"
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install mlflow scikit-learn pandas
+
+    - name: Run Retraining Script
+      run: |
+        python retraining/retrain.py
